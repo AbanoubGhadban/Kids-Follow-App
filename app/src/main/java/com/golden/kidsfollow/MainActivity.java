@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -18,19 +17,16 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.golden.kidsfollow.models.Classroom;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ClassAdapter.OnClassroomClickedListener {
 
     private static final int RC_SIGN_IN = 1;
 
@@ -94,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
                 classAdapter.deleteClassroom(viewHolder.getAdapterPosition());
             }
         }).attachToRecyclerView(recyclerView);
+
+        classAdapter.setOnClassroomClickedListener(this);
     }
 
     @Override
@@ -137,5 +135,12 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Signed Out", Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    @Override
+    public void onClassRoomClicked(DocumentSnapshot documentSnapshot, int position) {
+        Intent intent = new Intent(getApplicationContext(), KidsActivity.class);
+        intent.putExtra(KidsActivity.CLASSROOM_ID_EXTRA, documentSnapshot.getId());
+        startActivity(intent);
     }
 }

@@ -11,8 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.golden.kidsfollow.models.Classroom;
+import com.google.firebase.firestore.DocumentSnapshot;
 
 public class ClassAdapter extends FirestoreRecyclerAdapter<Classroom, ClassAdapter.ClassHolder> {
+
+    private OnClassroomClickedListener listener;
 
     ClassAdapter(@NonNull FirestoreRecyclerOptions<Classroom> options) {
         super(options);
@@ -47,6 +50,29 @@ public class ClassAdapter extends FirestoreRecyclerAdapter<Classroom, ClassAdapt
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tvItemTitle);
             tvDescription = itemView.findViewById(R.id.tvItemDescription);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION && listener != null) {
+                        listener.onClassRoomClicked(getSnapshots().getSnapshot(position), position);
+                    }
+                }
+            });
         }
+    }
+
+    interface OnClassroomClickedListener {
+        void onClassRoomClicked(DocumentSnapshot documentSnapshot, int position);
+    }
+
+    void setOnClassroomClickedListener(OnClassroomClickedListener listener) {
+        this.listener = listener;
+    }
+
+    void removeOnItemClickedListener(OnClassroomClickedListener listener) {
+        if (this.listener == listener)
+            this.listener = null;
     }
 }
