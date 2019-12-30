@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "995580379052",
+    "firebase_url": "https://shopping-app-5482e.firebaseio.com",
+    "project_id": "shopping-app-5482e",
+    "storage_bucket": "shopping-app-5482e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995580379052:android:82c48e4f9d2769b7098409",
+        "android_client_info": {
+          "package_name": "com.example.my_music_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "995580379052-idlkc9c78f14fi0f0l07am045a5frf2q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1Z6CAlfbbB0GvKuiG8SFJtKXmHlgRDJ4"
+        },
+        {
+          "current_key": "AIzaSyCAy77sqoj4PiBypq9QgfHzlO1swAY5NRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "995580379052-idlkc9c78f14fi0f0l07am045a5frf2q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995580379052:android:cc89cf25673e478e098409",
+        "android_client_info": {
+          "package_name": "com.golden.kidsfollow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "995580379052-q8eb9h110l0kijrigkucmg1icrf0nntj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.golden.kidsfollow",
+            "certificate_hash": "1afdf00787004a960e2caeac1f8d167f121bead1"
+          }
+        },
+        {
+          "client_id": "995580379052-idlkc9c78f14fi0f0l07am045a5frf2q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1Z6CAlfbbB0GvKuiG8SFJtKXmHlgRDJ4"
+        },
+        {
+          "current_key": "AIzaSyCAy77sqoj4PiBypq9QgfHzlO1swAY5NRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "995580379052-idlkc9c78f14fi0f0l07am045a5frf2q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
